@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_185559) do
+ActiveRecord::Schema.define(version: 2021_03_10_200359) do
 
   create_table "pairings", force: :cascade do |t|
     t.string "food_name"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"wine_id\"", name: "index_pairings_on_wine_id"
+    t.integer "wine_id"
+    t.index ["wine_id"], name: "index_pairings_on_wine_id"
   end
 
   create_table "wines", force: :cascade do |t|

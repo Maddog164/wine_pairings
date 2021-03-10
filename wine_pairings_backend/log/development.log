@@ -58,3 +58,113 @@ Migrating to AddImageUrlToWines (20210310185559)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddWineIdToPairings (20210310200359)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "pairings" ADD "wine_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210310200359"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Orin Swift Mercury Head"], ["color", "Red"], ["grape", "Cabernet Sauvignon"], ["created_at", "2021-03-10 20:05:09.068782"], ["updated_at", "2021-03-10 20:05:09.068782"], ["image_url", "https://www.wine-searcher.com/images/labels/40/49/10154049.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Screaming Eagle"], ["color", "Red"], ["grape", "Cabernet Sauvignon"], ["created_at", "2021-03-10 20:05:09.090922"], ["updated_at", "2021-03-10 20:05:09.090922"], ["image_url", "https://www.wine-searcher.com/images/labels/87/40/10378740.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Molly Dooker Blue Eyed Boy"], ["color", "Red"], ["grape", "Shiraz"], ["created_at", "2021-03-10 20:05:09.110656"], ["updated_at", "2021-03-10 20:05:09.110656"], ["image_url", "https://www.wine-searcher.com/images/labels/24/33/10122433.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Molly Dooker Enchanted Path"], ["color", "Red"], ["grape", "Shiraz"], ["created_at", "2021-03-10 20:05:09.130408"], ["updated_at", "2021-03-10 20:05:09.130408"], ["image_url", "https://www.wine-searcher.com/images/labels/12/08/10261208.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.4ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bertani Amarone della Valpolicella Classico DOCG"], ["color", "Red"], ["grape", "Valpolicella Blend"], ["created_at", "2021-03-10 20:05:09.149381"], ["updated_at", "2021-03-10 20:05:09.149381"], ["image_url", "https://www.wine-searcher.com/images/labels/11/04/10091104.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Far Niente Chardonnay"], ["color", "White"], ["grape", "Chardonnay"], ["created_at", "2021-03-10 20:05:09.171016"], ["updated_at", "2021-03-10 20:05:09.171016"], ["image_url", "https://www.wine-searcher.com/images/labels/39/44/10243944.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.4ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Badia a Coltibuono Chianti Classico Riserva DOCG"], ["color", "Red"], ["grape", "Sangiovese"], ["created_at", "2021-03-10 20:05:09.193043"], ["updated_at", "2021-03-10 20:05:09.193043"], ["image_url", "https://www.wine-searcher.com/images/labels/86/70/10968670.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Henri Bourgeois"], ["color", "White"], ["grape", "Sancerre"], ["created_at", "2021-03-10 20:05:09.224015"], ["updated_at", "2021-03-10 20:05:09.224015"], ["image_url", "Sauvignon Blanc"]]
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Create (0.4ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Domaine des Bernardins Muscat de Beaumes-de-Venise"], ["color", "White"], ["grape", "Muscat Blanc a Petits Grains"], ["created_at", "2021-03-10 20:05:09.248421"], ["updated_at", "2021-03-10 20:05:09.248421"], ["image_url", "https://www.wine-searcher.com/images/labels/97/48/10399748.jpg?width=466&height=400&fit=bounds"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Lamb"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.280593"], ["updated_at", "2021-03-10 20:05:09.280593"], ["wine_id", 4]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Lamb Chops"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.300965"], ["updated_at", "2021-03-10 20:05:09.300965"], ["wine_id", 5]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Beef"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.321188"], ["updated_at", "2021-03-10 20:05:09.321188"], ["wine_id", 1]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPairing Create (1.0ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Hearty Beef Stew"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.344721"], ["updated_at", "2021-03-10 20:05:09.344721"], ["wine_id", 2]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Venison"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.388613"], ["updated_at", "2021-03-10 20:05:09.388613"], ["wine_id", 3]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.7ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Chicken"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.412154"], ["updated_at", "2021-03-10 20:05:09.412154"], ["wine_id", 8]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Mushroom Ragu"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.439353"], ["updated_at", "2021-03-10 20:05:09.439353"], ["wine_id", 6]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Pork Tenderloin"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.456699"], ["updated_at", "2021-03-10 20:05:09.456699"], ["wine_id", 7]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Chocolate Souffle"], ["description", "Sweet"], ["created_at", "2021-03-10 20:05:09.475671"], ["updated_at", "2021-03-10 20:05:09.475671"], ["wine_id", 9]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Creme Brulee"], ["description", "Sweet"], ["created_at", "2021-03-10 20:05:09.496599"], ["updated_at", "2021-03-10 20:05:09.496599"], ["wine_id", 9]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Chocolate Cake"], ["description", "Sweet"], ["created_at", "2021-03-10 20:05:09.520984"], ["updated_at", "2021-03-10 20:05:09.520984"], ["wine_id", 9]]
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Lobster"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.545109"], ["updated_at", "2021-03-10 20:05:09.545109"], ["wine_id", 6]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Salmon"], ["description", "Savory"], ["created_at", "2021-03-10 20:05:09.567659"], ["updated_at", "2021-03-10 20:05:09.567659"], ["wine_id", 8]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPairing Load (0.4ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPairing Load (0.3ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 9], ["LIMIT", 11]]
