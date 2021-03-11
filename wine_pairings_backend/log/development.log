@@ -168,3 +168,397 @@ Migrating to AddWineIdToPairings (20210310200359)
   [1m[36mPairing Load (0.4ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mPairing Load (0.3ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 9], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2021-03-10 15:53:10 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/denise/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/denise/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 20.0ms | Allocations: 477)
+Completed 200 OK in 54ms (Views: 40.1ms | ActiveRecord: 0.0ms | Allocations: 2611)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-03-10 15:53:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/info/routes" for ::1 at 2021-03-10 15:53:28 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/denise/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/denise/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [30 times] (Duration: 8.2ms | Allocations: 3818)
+  Rendered /home/denise/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.3.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.0ms | Allocations: 703)
+  Rendered /home/denise/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 21.1ms | Allocations: 6640)
+Completed 200 OK in 36ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 7820)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 17:33:10 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (1.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 108ms (Views: 56.1ms | ActiveRecord: 5.9ms | Allocations: 8717)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:13:50 -0500
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (1.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 127ms (Views: 87.4ms | ActiveRecord: 1.2ms | Allocations: 2390)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:14:18 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.5ms | Allocations: 2377)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:16:07 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (10.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 119ms (Views: 105.5ms | ActiveRecord: 10.3ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:16:38 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (17.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 61ms (Views: 40.3ms | ActiveRecord: 17.2ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:17:12 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (1.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 1.7ms | Allocations: 2377)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:17:28 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 192ms (Views: 185.1ms | ActiveRecord: 0.4ms | Allocations: 2361)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:18:00 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (5.6ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 107ms (Views: 100.3ms | ActiveRecord: 5.6ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:32:58 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.5ms | Allocations: 2382)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:34:43 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (21.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 66ms (Views: 43.9ms | ActiveRecord: 21.3ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:43:50 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 0.4ms | Allocations: 2382)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:44:16 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 42ms (Views: 30.9ms | ActiveRecord: 0.4ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:46:36 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 74ms (Views: 72.2ms | ActiveRecord: 0.3ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 18:49:20 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 38ms (Views: 32.6ms | ActiveRecord: 0.3ms | Allocations: 2360)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 19:27:56 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (3.9ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 42ms (Views: 35.4ms | ActiveRecord: 3.9ms | Allocations: 2382)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 19:40:19 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.5ms | Allocations: 2382)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 19:42:01 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 2363)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 19:53:19 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 2382)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:06:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 2382)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:06:32 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[36mWine Create (13.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 01:06:32.062909"], ["updated_at", "2021-03-11 01:06:32.062909"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+Completed 200 OK in 81ms (Views: 0.5ms | ActiveRecord: 33.4ms | Allocations: 5131)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:09:33 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 2505)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:09:42 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[36mWine Create (2.2ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 01:09:42.854500"], ["updated_at", "2021-03-11 01:09:42.854500"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[35m (31.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+Completed 200 OK in 47ms (Views: 1.7ms | ActiveRecord: 33.7ms | Allocations: 4855)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:12:43 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 01:12:43.012003"], ["updated_at", "2021-03-11 01:12:43.012003"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[35m (21.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+Completed 200 OK in 35ms (Views: 0.7ms | ActiveRecord: 23.1ms | Allocations: 4851)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:12:45 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[36mWine Create (0.8ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 01:12:45.200523"], ["updated_at", "2021-03-11 01:12:45.200523"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+  [1m[35m (32.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:9:in `create'
+Completed 200 OK in 46ms (Views: 0.8ms | ActiveRecord: 33.7ms | Allocations: 4424)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:15:08 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 583)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007f72cc030ca0>
+Did you mean?  try):
+  
+app/controllers/api/v1/wines_controller.rb:9:in `create'
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:16:36 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 51ms (Views: 39.9ms | ActiveRecord: 1.7ms | Allocations: 9174)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:16:47 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:23:55 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 2972)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:53:31 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:53:37 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 28ms (Views: 19.0ms | ActiveRecord: 0.7ms | Allocations: 2961)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 20:54:23 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{"name"=>""}}
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:55:06 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.5ms | Allocations: 2972)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 20:59:20 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.4ms | Allocations: 2939)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:03:07 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.3ms | Allocations: 2939)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:13:18 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as HTML
+  [1m[36mWine Load (0.8ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.8ms | Allocations: 2960)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:24:03 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.7ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.7ms | Allocations: 2961)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:24:52 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (1.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 1.5ms | Allocations: 2939)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:34:38 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.4ms | Allocations: 2961)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:42:59 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.5ms | Allocations: 2961)
+
+
+Started GET "/api/v1/wines" for ::1 at 2021-03-10 21:43:53 -0500
+Processing by Api::V1::WinesController#index as */*
+  [1m[36mWine Load (3.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines"[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:5:in `index'
+Completed 200 OK in 347ms (Views: 342.6ms | ActiveRecord: 3.4ms | Allocations: 2944)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-10 21:44:38 -0500
+Processing by Api::V1::WinesController#create as */*
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 234085ms (ActiveRecord: 0.0ms | Allocations: 9519)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:17:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mWine Create (3.1ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 02:48:47.074021"], ["updated_at", "2021-03-11 02:48:47.074021"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (28.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+Completed 200 OK in 3265371ms (Views: 1.1ms | ActiveRecord: 31.5ms | Allocations: 107929)
+
+
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mWine Create (1.1ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 02:48:51.226689"], ["updated_at", "2021-03-11 02:48:51.226689"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (24.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+Completed 200 OK in 3322329ms (Views: 0.4ms | ActiveRecord: 25.4ms | Allocations: 130550)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mWine Create (0.9ms)[0m  [1m[32mINSERT INTO "wines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2021-03-11 02:48:55.366145"], ["updated_at", "2021-03-11 02:48:55.366145"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (28.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+Completed 200 OK in 5529373ms (Views: 0.4ms | ActiveRecord: 29.5ms | Allocations: 178020)
+
+
