@@ -562,3 +562,79 @@ Completed 200 OK in 3322329ms (Views: 0.4ms | ActiveRecord: 25.4ms | Allocations
 Completed 200 OK in 5529373ms (Views: 0.4ms | ActiveRecord: 29.5ms | Allocations: 178020)
 
 
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mWine Load (0.8ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 09:49:57 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"user"=>{}, "wine"=>{}}
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 09:50:11 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"user"=>{}, "wine"=>{}}
+Completed 400 Bad Request in 40309ms (ActiveRecord: 0.0ms | Allocations: 7266)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:17:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Completed 400 Bad Request in 61200ms (ActiveRecord: 0.4ms | Allocations: 52016)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:17:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 09:55:13 -0500
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"user"=>{}, "wine"=>{}}
+Completed 400 Bad Request in 1219109ms (ActiveRecord: 0.0ms | Allocations: 14083)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:17:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 10:24:09 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 15128ms (ActiveRecord: 0.0ms | Allocations: 8877)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:17:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 10:33:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 16608ms (ActiveRecord: 0.0ms | Allocations: 8064)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 11:17:22 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 677694ms (ActiveRecord: 0.0ms | Allocations: 9686)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'

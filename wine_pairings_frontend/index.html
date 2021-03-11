@@ -7,6 +7,8 @@
         <title>Wine Pairings</title>
         <link rel="stylesheet" href="src/styles.css">
 
+        <script type="application/javascript" src="src/service.js" charset="UTF-8"></script>
+        <script type="application/javascript" src="src/wine.js" charset="UTF-8"></script>
         <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 
         
@@ -19,9 +21,14 @@
             <form id="new-wine-form">
                 <h1>Add A New Wine</h1> <br/>
                 <div class="input_field">
-                    <label for='name'>Name of Wine:</label>
+                    <label>Name of Wine:</label>
                     <input type="text" name="new-wine-name" id="new-wine-name"/><br/>
+                    <label>Color of Wine:</label>
+                    <input type="text" name="new-wine-color" id="new-wine-color"/><br/>
+                    <label>Type of Grape:</label>
+                    <input type="text" name="new-wine-grape" id="new-wine-grape"/><br/>
                 </div>
+                <br/>
                 <input type="submit"/>
             </form>
         </div>
