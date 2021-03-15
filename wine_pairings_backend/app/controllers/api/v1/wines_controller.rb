@@ -6,9 +6,10 @@ class Api::V1::WinesController < ApplicationController
     end
 
     def create
-        binding.pry
+        # binding.pry
         if Wine.find_by(:name => wine_params[:name])
-            wine = Wine.create(wine_params)
+            wine = Wine.find_by(:name => wine_params[:name])
+            binding.pry
             redirect_to "/api/v1/wines/#{wine.id}"
         else
             wine = Wine.create(wine_params)
@@ -17,7 +18,7 @@ class Api::V1::WinesController < ApplicationController
     end
 
     def show
-        wine = Wine.fiind_by(:id => params[:id].to_i)
+        wine = Wine.find_by(:id => params[:id].to_i)
         render json: wine
     end
 

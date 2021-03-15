@@ -638,3 +638,481 @@ ActionController::ParameterMissing (param is missing or the value is empty: wine
   
 app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
 app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 13:53:30 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 14:02:43 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 86754ms (ActiveRecord: 0.0ms | Allocations: 9716)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 14:04:16 -0500
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 60616ms (ActiveRecord: 0.0ms | Allocations: 6415)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 14:44:19 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 58319ms (ActiveRecord: 3.6ms | Allocations: 8134)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 16:41:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 16:42:02 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 4317ms (ActiveRecord: 0.0ms | Allocations: 6336)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 17:06:45 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{}}
+Completed 400 Bad Request in 26624ms (ActiveRecord: 0.0ms | Allocations: 6324)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: wine):
+  
+app/controllers/api/v1/wines_controller.rb:26:in `wine_params'
+app/controllers/api/v1/wines_controller.rb:10:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 17:08:58 -0500
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Denise's New Wine", "color"=>"Very Red", "grape"=>"Very Fine Grape", "image_url"=>"Sampleurl"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Denise's New Wine"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[36mWine Create (1.2ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Denise's New Wine"], ["color", "Very Red"], ["grape", "Very Fine Grape"], ["created_at", "2021-03-11 22:09:30.661593"], ["updated_at", "2021-03-11 22:09:30.661593"], ["image_url", "Sampleurl"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+Completed 200 OK in 32258ms (Views: 0.8ms | ActiveRecord: 14.3ms | Allocations: 21944)
+
+
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-11 17:23:43 -0500
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 16:00:49 -0400
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 0315", "color"=>"red", "grape"=>"red", "image_url"=>"url"}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 0315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 0315"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 20:00:49.266747"], ["updated_at", "2021-03-15 20:00:49.266747"], ["image_url", "url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+Completed 200 OK in 55ms (Views: 0.8ms | ActiveRecord: 21.1ms | Allocations: 11352)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:19:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"Red", "grape"=>"Cabernet Sauvignon", "image_url"=>"some url"}}
+  [1m[36mWine Load (0.6ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (1.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Screaming Eagle"], ["color", "Red"], ["grape", "Cabernet Sauvignon"], ["created_at", "2021-03-15 21:19:43.277071"], ["updated_at", "2021-03-15 21:19:43.277071"], ["image_url", "some url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/19
+Completed 302 Found in 33ms (ActiveRecord: 18.7ms | Allocations: 5477)
+
+
+Started GET "/api/v1/wines/19" for ::1 at 2021-03-15 17:19:43 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"19", "wine"=>{}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 2402)
+
+
+  
+NoMethodError (undefined method `fiind_by' for #<Class:0x00007f1ffd1e9e10>
+Did you mean?  find_by
+               find_by!):
+  
+app/controllers/api/v1/wines_controller.rb:20:in `show'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:24:39 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"Red", "grape"=>"Cabernet Sauvignon", "image_url"=>"some urll"}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Screaming Eagle"], ["color", "Red"], ["grape", "Cabernet Sauvignon"], ["created_at", "2021-03-15 21:24:39.922903"], ["updated_at", "2021-03-15 21:24:39.922903"], ["image_url", "some urll"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/20
+Completed 302 Found in 62ms (ActiveRecord: 23.5ms | Allocations: 10845)
+
+
+Started GET "/api/v1/wines/20" for ::1 at 2021-03-15 17:24:39 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"20", "wine"=>{}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 901)
+
+
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:35:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Screaming Eagle"], ["color", ""], ["grape", ""], ["created_at", "2021-03-15 21:35:15.169352"], ["updated_at", "2021-03-15 21:35:15.169352"], ["image_url", ""]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (24.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/21
+Completed 302 Found in 37ms (ActiveRecord: 25.1ms | Allocations: 5394)
+
+
+Started GET "/api/v1/wines/21" for ::1 at 2021-03-15 17:35:15 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"21", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 776)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:41:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 541", "color"=>"red", "grape"=>"red", "image_url"=>"some url"}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 541"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 541"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 21:41:53.230986"], ["updated_at", "2021-03-15 21:41:53.230986"], ["image_url", "some url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 10.3ms | Allocations: 5525)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:43:17 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 543", "color"=>"red", "grape"=>"red", "image_url"=>"some url"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 543"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 543"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 21:43:17.336082"], ["updated_at", "2021-03-15 21:43:17.336082"], ["image_url", "some url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 11.6ms | Allocations: 5526)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:50:49 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"red", "grape"=>"red", "image_url"=>"some url"}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Screaming Eagle"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 21:50:49.768654"], ["updated_at", "2021-03-15 21:50:49.768654"], ["image_url", "some url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/24
+Completed 302 Found in 39ms (ActiveRecord: 23.0ms | Allocations: 5442)
+
+
+Started GET "/api/v1/wines/24" for ::1 at 2021-03-15 17:50:49 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"24", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 776)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:55:25 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"red", "grape"=>"red", "image_url"=>"some url"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Screaming Eagle"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 21:55:25.826106"], ["updated_at", "2021-03-15 21:55:25.826106"], ["image_url", "some url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (22.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/25
+Completed 302 Found in 36ms (ActiveRecord: 23.2ms | Allocations: 5405)
+
+
+Started GET "/api/v1/wines/25" for ::1 at 2021-03-15 17:55:25 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"25", "wine"=>{}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 757)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 17:58:24 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 315", "color"=>"red", "grape"=>"red", "image_url"=>"url"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 315"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 21:58:24.500832"], ["updated_at", "2021-03-15 21:58:24.500832"], ["image_url", "url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+  [1m[35m (24.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:14:in `create'
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 25.5ms | Allocations: 5073)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 18:00:55 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 315", "color"=>"red", "grape"=>"red", "image_url"=>"url"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.6ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 315"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 22:00:55.612348"], ["updated_at", "2021-03-15 22:00:55.612348"], ["image_url", "url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (25.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/27
+Completed 302 Found in 38ms (ActiveRecord: 26.3ms | Allocations: 4940)
+
+
+Started GET "/api/v1/wines/27" for ::1 at 2021-03-15 18:00:55 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"27", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 757)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 18:01:01 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for Api::V1::PairingsController):
+  
+actionpack (6.0.3.5) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.5) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 18:05:08 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 0315", "color"=>"red", "grape"=>"red", "image_url"=>"url"}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 0315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 0315"], ["color", "red"], ["grape", "red"], ["created_at", "2021-03-15 22:05:08.160499"], ["updated_at", "2021-03-15 22:05:08.160499"], ["image_url", "url"]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/28
+Completed 302 Found in 35ms (ActiveRecord: 16.4ms | Allocations: 5426)
+
+
+Started GET "/api/v1/wines/28" for ::1 at 2021-03-15 18:05:08 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"28", "wine"=>{}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 757)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 18:06:46 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for Api::V1::PairingsController):
+  
+actionpack (6.0.3.5) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.5) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 18:25:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 315", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 315"], ["LIMIT", 1]]
+  ↳ (pry):4:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 18:28:41 -0400
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[36mWine Create (0.5ms)[0m  [1m[32mINSERT INTO "wines" ("name", "color", "grape", "created_at", "updated_at", "image_url") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wine 315"], ["color", ""], ["grape", ""], ["created_at", "2021-03-15 22:28:50.211816"], ["updated_at", "2021-03-15 22:28:50.211816"], ["image_url", ""]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+  [1m[35m (19.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/29
+Completed 302 Found in 181010ms (ActiveRecord: 19.9ms | Allocations: 38593)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Wine 315", "color"=>"red", "grape"=>"red", "image_url"=>"url"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Wine 315"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/26
+Completed 302 Found in 24872ms (ActiveRecord: 1.3ms | Allocations: 12338)
+
+
+Started GET "/api/v1/wines/26" for ::1 at 2021-03-15 18:29:15 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"26", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 18:30:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"red", "grape"=>"Cabernet Sauvignon", "image_url"=>"url"}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 15787ms (ActiveRecord: 1.5ms | Allocations: 22429)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 18:30:31 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 902)
+
+
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" ORDER BY "wines"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mPairing Load (0.3ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 2], ["LIMIT", 11]]
+  [1m[36mPairing Load (0.3ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 1], ["LIMIT", 11]]
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 3], ["LIMIT", 11]]
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 4], ["LIMIT", 11]]
+  [1m[36mPairing Load (0.4ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 5], ["LIMIT", 11]]
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 6], ["LIMIT", 11]]
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."wine_id" = ? LIMIT ?[0m  [["wine_id", 6], ["LIMIT", 11]]
