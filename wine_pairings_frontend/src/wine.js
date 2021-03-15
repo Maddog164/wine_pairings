@@ -7,6 +7,8 @@ class Wine {
         this.color = wine.color
         this.grape = wine.grape
         this.image_url = wine.image_url
+        this.pairings = wine.pairings
+        Wine.allWines.push(this)
     }
 
     static newWine(){
@@ -30,15 +32,15 @@ class Wine {
         let id = wineDisplay.dataset.id
         wineDisplay.innerHTML = `<h1>Added ${this.name}</h1>`
         body.append(wineDisplay)
-        // this.renderPairings()
+        this.renderPairings()
         // Pairing.newPairingForm(this.id)
     }
 
-    renderWines() {
-        if (this.wines) {
-            this.wines.forEach(function(wine) {
-                let newWine = new Wine(wine)
-                newWine.createWineCard()
+    renderPairings() {
+        if (this.pairings) {
+            this.pairings.forEach(function(pairing) {
+                let newPairing = new Pairing(pairing)
+                newPairing.createPairingCard()
             })
         }
     }

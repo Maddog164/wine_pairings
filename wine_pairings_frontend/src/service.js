@@ -15,10 +15,11 @@ class ApiService {
             body: JSON.stringify(
                 {
                     wine: {
-                        name: e.target.children[0].value,
-                        color: e.target.children[1].value,
-                        grape: e.target.children[2].value,
-                        image_url: e.target.children[3].value
+                        // console.log("in body json stringify of findorcreatewine")
+                        name: e.target.querySelector('#name').value,
+                        color: e.target.querySelector('#color').value,
+                        grape: e.target.querySelector('#grape').value,
+                        image_url: e.target.querySelector('#image_url').value
                     }
                 })
         })
@@ -40,16 +41,20 @@ class ApiService {
             body: JSON.stringify(
                 {
                     wine: {
-                       name: e.target.children[0].value,
-                       color: e.target.children[1].value,
-                       grape: e.target.children[2].value,
-                       image_url: e.target.children[3].value
+                        // console.log("in body json stringify of postwine")
+                        name: e.target.querySelector('#name').value,
+                        color: e.target.querySelector('#color').value,
+                        grape: e.target.querySelector('#grape').value,
+                        image_url: e.target.querySelector('#image_url').value
                     }
-                }
-            )
+                })
         })
         .then(resp => resp.json())
     }
 
-
+    removePairing(e) {
+        fetch(`${this.baseURL}/pairings/${e.target.parentNode.dataset.id}`, {
+            method: "DELETE"
+        })
+    }
 }
