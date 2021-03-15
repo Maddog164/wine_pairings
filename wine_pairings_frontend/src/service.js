@@ -31,8 +31,8 @@ class ApiService {
     }
 
     //create
-    postWine(e, wine_id) {
-        return fetch('${this.baseUrl}/wines', {
+    postPairing(e, wine_id) {
+        return fetch(`${this.baseUrl}/pairings`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,12 +40,10 @@ class ApiService {
             },
             body: JSON.stringify(
                 {
-                    wine: {
-                        // console.log("in body json stringify of postwine")
-                        name: e.target.querySelector('#name').value,
-                        color: e.target.querySelector('#color').value,
-                        grape: e.target.querySelector('#grape').value,
-                        image_url: e.target.querySelector('#image_url').value
+                    pairing: {
+                        food_name: e.target.children[1].value,
+                        description: e.target.children[3].value,
+                        wine_id: wine_id
                     }
                 })
         })

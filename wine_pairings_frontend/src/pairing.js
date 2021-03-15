@@ -10,7 +10,7 @@ class Pairing {
     }
 
     static newPairingForm(wine_id) {
-        let body = document.getElementById('container')
+        let body = document.getElementById('pairings-container')
         let form = 
            `
            <form id="new-pairing-form">
@@ -30,7 +30,7 @@ class Pairing {
         let newForm = document.getElementById('new-pairing-form')
         newForm.addEventListener('submit', function(e) {
             e.preventDefault()
-            ApiService.postPairing(e, wine_id)
+            apiService.postPairing(e, wine_id)
                 .then(json => {
                     console.log(json)
                     newForm.reset()
