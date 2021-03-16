@@ -4,8 +4,8 @@ class Pairing {
 
     constructor(pairing){
         this.id = pairing.id
-        this.name = pairing.food_name
-        this.descriptiion = pairing.description
+        this.food_name = pairing.food_name
+        this.description = pairing.description
         Pairing.allPairings.push(this)
     }
 
@@ -15,9 +15,9 @@ class Pairing {
            `
            <form id="new-pairing-form">
                 <label>Food to Pair With This Wine:</label>
-                <input type="text" id="pairing-food-name"/>
+                <input type="text" id="pairing-food-name"/></br>
                 <label>Type of Food:</label>
-                <input type="text" id="pairing-description"/>
+                <input type="text" id="pairing-description"/></br></br>
                 <input type="submit"/>
                 <h4>Foods Currently Paired With This Wine:</h4>
             </form>

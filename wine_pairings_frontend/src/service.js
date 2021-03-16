@@ -42,7 +42,7 @@ class ApiService {
                 {
                     pairing: {
                         food_name: e.target.children[1].value,
-                        description: e.target.children[3].value,
+                        description: e.target.children[4].value,
                         wine_id: wine_id
                     }
                 })
