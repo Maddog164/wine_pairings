@@ -9,7 +9,6 @@ class Api::V1::WinesController < ApplicationController
         # binding.pry
         if Wine.find_by(:name => wine_params[:name])
             wine = Wine.find_by(:name => wine_params[:name])
-            binding.pry
             redirect_to "/api/v1/wines/#{wine.id}"
         else
             wine = Wine.create(wine_params)

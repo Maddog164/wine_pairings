@@ -1191,3 +1191,448 @@ Processing by Api::V1::WinesController#show as JSON
 Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 783)
 
 
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:00:15 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Oysters", "wine_id"=>2}}
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (1.2ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "Oysters"], ["created_at", "2021-03-16 01:03:25.546553"], ["updated_at", "2021-03-16 01:03:25.546553"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 189831ms (ActiveRecord: 82.3ms | Allocations: 37897)
+
+
+  
+SyntaxError (/home/denise/development/flatiron/projects/js/wine_pairings/wine_pairings_backend/app/serializers/pairing_serializer.rb:10: syntax error, unexpected tSYMBEG, expecting '}'
+            :pairing => {:only => [:food_n...
+            ^
+/home/denise/development/flatiron/projects/js/wine_pairings/wine_pairings_backend/app/serializers/pairing_serializer.rb:11: syntax error, unexpected '}', expecting end
+        })
+        ^):
+  
+app/serializers/pairing_serializer.rb:10: syntax error, unexpected tSYMBEG, expecting '}'
+app/serializers/pairing_serializer.rb:11: syntax error, unexpected '}', expecting end
+app/serializers/pairing_serializer.rb:10: syntax error, unexpected tSYMBEG, expecting '}'
+app/serializers/pairing_serializer.rb:11: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/pairings_controller.rb:12:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:05:20 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 3875ms (ActiveRecord: 1.8ms | Allocations: 12770)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:05:24 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.55ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.4ms | Allocations: 1749)
+
+
+  [1m[36mPairing Load (0.8ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:06:30 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Crackers", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.8ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "Crackers"], ["created_at", "2021-03-16 01:06:43.657827"], ["updated_at", "2021-03-16 01:06:43.657827"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (30.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 13509ms (ActiveRecord: 32.4ms | Allocations: 19447)
+
+
+  
+NoMethodError (undefined method `pairing' for #<Pairing:0x000056465985e058>):
+  
+app/serializers/pairing_serializer.rb:8:in `to_serialized_json'
+app/controllers/api/v1/pairings_controller.rb:12:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:08:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 4908ms (ActiveRecord: 2.1ms | Allocations: 12720)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:08:54 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.58ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1409)
+
+
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPairing Load (0.5ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE (wine_id = 2) LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:12:28 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.1ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:12:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.5ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 10141ms (ActiveRecord: 0.6ms | Allocations: 7524)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:12:41 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.41ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 900)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:19:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Cheese", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "Cheese"], ["created_at", "2021-03-16 01:20:16.332979"], ["updated_at", "2021-03-16 01:20:16.332979"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (23.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 59565ms (ActiveRecord: 25.4ms | Allocations: 27135)
+
+
+  
+NoMethodError (undefined method `pairing' for #<Pairing:0x00007f0bfd269980>):
+  
+app/serializers/pairing_serializer.rb:9:in `to_serialized_json'
+app/controllers/api/v1/pairings_controller.rb:12:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:28:17 -0400
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 988868ms (ActiveRecord: 0.3ms | Allocations: 91390)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:28:57 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 11458ms (ActiveRecord: 2.5ms | Allocations: 14537)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:29:09 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  [1m[36mWine Load (6.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.88ms)
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Completed 200 OK in 26ms (Views: 3.8ms | ActiveRecord: 6.9ms | Allocations: 7147)
+
+
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 8892ms (ActiveRecord: 0.6ms | Allocations: 13440)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:29:59 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.49ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 901)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:30:29 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 6916ms (ActiveRecord: 0.2ms | Allocations: 9289)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:30:36 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.42ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 881)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:31:11 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"almonds", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (1.0ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "almonds"], ["created_at", "2021-03-16 01:31:49.278359"], ["updated_at", "2021-03-16 01:31:49.278359"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 45913ms (ActiveRecord: 25.2ms | Allocations: 31828)
+
+
+  
+NoMethodError (undefined method `pairing' for #<Pairing:0x00005646591b12c8>):
+  
+app/serializers/pairing_serializer.rb:14:in `to_serialized_json'
+app/controllers/api/v1/pairings_controller.rb:12:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:34:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 5500ms (ActiveRecord: 1.3ms | Allocations: 15605)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:35:03 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.37ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1409)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:35:35 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Brie", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "Brie"], ["created_at", "2021-03-16 01:36:07.712484"], ["updated_at", "2021-03-16 01:36:07.712484"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (19.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 211414ms (ActiveRecord: 20.5ms | Allocations: 60421)
+
+
+  
+NoMethodError (undefined method `pairing' for #<Pairing:0x00007f0bfd2cd818>):
+  
+app/serializers/pairing_serializer.rb:16:in `to_serialized_json'
+app/controllers/api/v1/pairings_controller.rb:12:in `create'
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:39:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 3612ms (ActiveRecord: 1.9ms | Allocations: 12703)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:39:21 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.34ms)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1408)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:40:52 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"dates", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (2.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "dates"], ["created_at", "2021-03-16 01:41:01.063290"], ["updated_at", "2021-03-16 01:41:01.063290"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 14225ms (Views: 0.4ms | ActiveRecord: 15.8ms | Allocations: 27311)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:44:49 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 11300ms (ActiveRecord: 0.4ms | Allocations: 7498)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:45:00 -0400
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.71ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 881)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:45:23 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Pickles", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "Pickles"], ["created_at", "2021-03-16 01:45:36.634603"], ["updated_at", "2021-03-16 01:45:36.634603"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (26.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 17949ms (Views: 0.3ms | ActiveRecord: 27.1ms | Allocations: 24504)
+
+
+  [1m[36mPairing Load (0.6ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:48:16 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"straws", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "straws"], ["created_at", "2021-03-16 01:48:24.843489"], ["updated_at", "2021-03-16 01:48:24.843489"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (74.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 11944ms (Views: 0.3ms | ActiveRecord: 75.8ms | Allocations: 24074)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:49:46 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"beans", "wine_id"=>2}}
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:52:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"creme brulee", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "creme brulee"], ["created_at", "2021-03-16 01:53:51.677139"], ["updated_at", "2021-03-16 01:53:51.677139"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (22.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 89920ms (Views: 0.3ms | ActiveRecord: 23.5ms | Allocations: 23029)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:54:13 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"beets", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.5ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "beets"], ["created_at", "2021-03-16 01:55:04.297454"], ["updated_at", "2021-03-16 01:55:04.297454"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 54304ms (Views: 0.3ms | ActiveRecord: 22.9ms | Allocations: 24563)
+
+
+Started POST "/api/v1/wines" for ::1 at 2021-03-15 21:56:12 -0400
+Processing by Api::V1::WinesController#create as JSON
+  Parameters: {"wine"=>{"name"=>"Screaming Eagle", "color"=>"", "grape"=>"", "image_url"=>""}}
+  [1m[36mWine Load (0.4ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:10:in `create'
+  [1m[36mCACHE Wine Load (0.0ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."name" = ? LIMIT ?[0m  [["name", "Screaming Eagle"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:11:in `create'
+Redirected to http://localhost:3000/api/v1/wines/2
+Completed 302 Found in 28512ms (ActiveRecord: 0.5ms | Allocations: 9111)
+
+
+Started GET "/api/v1/wines/2" for ::1 at 2021-03-15 21:56:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.6ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?)[0m  [["food_name", "beans"], ["created_at", "2021-03-16 01:57:15.382447"], ["updated_at", "2021-03-16 01:57:15.382447"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 460227ms (Views: 0.2ms | ActiveRecord: 17.2ms | Allocations: 91345)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::WinesController#show as JSON
+  Parameters: {"id"=>"2", "wine"=>{}}
+  [1m[36mWine Load (0.3ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/wines_controller.rb:20:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Wine (0.53ms)
+Completed 200 OK in 15ms (Views: 2.5ms | ActiveRecord: 1.3ms | Allocations: 5714)
+
+
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:57:53 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Beets", "description"=>"Savory", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (0.4ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Beets"], ["description", "Savory"], ["created_at", "2021-03-16 01:58:06.117951"], ["updated_at", "2021-03-16 01:58:06.117951"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (21.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 19525ms (Views: 0.7ms | ActiveRecord: 24.0ms | Allocations: 33532)
+
+
+  [1m[36mPairing Load (0.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/v1/pairings" for ::1 at 2021-03-15 21:59:41 -0400
+Processing by Api::V1::PairingsController#create as JSON
+  Parameters: {"pairing"=>{"food_name"=>"Beef", "description"=>"savory", "wine_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mWine Load (0.2ms)[0m  [1m[34mSELECT "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[36mPairing Create (8.7ms)[0m  [1m[32mINSERT INTO "pairings" ("food_name", "description", "created_at", "updated_at", "wine_id") VALUES (?, ?, ?, ?, ?)[0m  [["food_name", "Beef"], ["description", "savory"], ["created_at", "2021-03-16 01:59:45.611750"], ["updated_at", "2021-03-16 01:59:45.611750"], ["wine_id", 2]]
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+  [1m[35m (23.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/pairings_controller.rb:11:in `create'
+Completed 200 OK in 6403ms (Views: 0.8ms | ActiveRecord: 32.8ms | Allocations: 22728)
+
+
