@@ -51,10 +51,12 @@ class ApiService {
     }
 
     removePairing(e) {
-        fetch(`${this.baseURL}/pairings/${e.target.parentNode.dataset.id}`, {
+        console.log(`${this.baseURL}/pairings/${e.target.parentNode.dataset.id}`);
+        // fetch(`${this.baseURL}/pairings/${e.target.parentNode.dataset.id}`, {
+            fetch(`http://localhost:3000/api/v1/pairings/${e.target.parentNode.dataset.id}`, {
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "text/plain"
                 // "Accept": "application/json"
             },
             body: null
