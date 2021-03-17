@@ -32,11 +32,8 @@ class Wine {
         let id = wineDisplay.dataset.id
         wineDisplay.innerHTML = `<h1>Added ${this.name}</h1>`
         body.append(wineDisplay)
-        console.log("wine.js l35")
         this.renderPairings()
-        console.log("wine.js l37")
         Pairing.newPairingForm(this.id)
-        console.log("wine.js l39")
     }
 
     renderPairings() {
