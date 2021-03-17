@@ -30,13 +30,14 @@ class Wine {
         let wineDisplay = document.createElement('p')
         wineDisplay.setAttribute('data-id', this.id)
         let id = wineDisplay.dataset.id
-        wineDisplay.innerHTML = `<h1>Added ${this.name}</h1>`
+        wineDisplay.innerHTML = `<h1>${this.name}</h1>`
         body.append(wineDisplay)
         this.renderPairings()
         Pairing.newPairingForm(this.id)
     }
 
     renderPairings() {
+        
         if (this.pairings) {
             this.pairings.forEach(function(pairing) {
                 let newPairing = new Pairing(pairing)

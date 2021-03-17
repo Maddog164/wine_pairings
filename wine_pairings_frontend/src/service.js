@@ -52,7 +52,20 @@ class ApiService {
 
     removePairing(e) {
         fetch(`${this.baseURL}/pairings/${e.target.parentNode.dataset.id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+                // "Accept": "application/json"
+            },
+            body: null
+            //     {
+            //     pairing: {
+            //         wine_id: e.target.parentNode.dataset.id
+            })
+        .then(response => {
+            return response.json()
         })
+        .then(data =>
+            console.log(data))
     }
 }

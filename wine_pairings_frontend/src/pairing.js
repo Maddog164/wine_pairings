@@ -19,7 +19,6 @@ class Pairing {
                 <label>Type of Food:</label>
                 <input type="text" id="pairing-description"/></br></br>
                 <input type="submit"/>
-                <h4>Foods Currently Paired With This Wine:</h4>
             </form>
            `
         body.insertAdjacentHTML('beforeend', form)
