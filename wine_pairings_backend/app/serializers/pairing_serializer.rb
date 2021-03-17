@@ -9,8 +9,7 @@ class PairingSerializer<ActiveModel::Serializer
     end
 
     def to_serialized_json
-        binding.pry
-        return @pairing.to_json
+       return @pairing.to_json
     end
  
 end
