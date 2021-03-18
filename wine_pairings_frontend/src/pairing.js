@@ -43,8 +43,9 @@ class Pairing {
         let p = document.createElement('p')
         p.setAttribute('data-id', this.id)
         p.innerHTML = `${this.food_name} || ${this.description}`
+        
         let deleteForm = ` <button type="button" id="${this.id}" class ="delete-pairing"> Delete </button> `
-        p.insertAdjacentHTML('beforeend', deleteForm)
+        p.insertAdjacentHTML('afterbegin', deleteForm)
         this.appendPairing(p)
     }
 

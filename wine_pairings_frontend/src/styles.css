@@ -4,3 +4,7 @@ body {
     background-color: #7a0639;
     text-align: left;
 }
+.flex {
+    display: flex;
+    align-items: flex-start;
+}

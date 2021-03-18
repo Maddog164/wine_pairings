@@ -27,10 +27,12 @@ class Wine {
     displayWine() {
         let body = document.getElementById('container')
         body.innerHTML = ''
-        let wineDisplay = document.createElement('p')
+        let wineDisplay = document.createElement('w')
         wineDisplay.setAttribute('data-id', this.id)
         let id = wineDisplay.dataset.id
-        wineDisplay.innerHTML = `<h1>${this.name}</h1>`
+        wineDisplay.innerHTML = `<h2>${this.name}</h2>`+`<h2>${this.color}</h2>`+`<h2>${this.grape}</h2>`
+        // wineDisplay.innerHTML = `<h2>${this.name}</h2>`+"<br>"+`<h2>${this.color}</h2>`
+        // wineDisplay.innerHTML = `<h3>${this.color}</h3>`
         body.append(wineDisplay)
         this.renderPairings()
         Pairing.newPairingForm(this.id)
