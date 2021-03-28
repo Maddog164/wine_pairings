@@ -57,10 +57,17 @@ class Pairing {
     }
 
     remove(button){
-        button.addEventListener('click', function(e) {
-            e.preventDefault()
+        button.addEventListener('click', e => {
+            console.log(this)
             apiService.removePairing(e)
-                e.target.parentElement.remove();
+            e.target.parentElement.remove();
         })
     }
+
+    // sort(button) {
+        
+    //     button.addEventListener('click', e => {
+
+    //     })
+    // }
  }
